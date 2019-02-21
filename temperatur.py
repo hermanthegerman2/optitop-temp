@@ -16,10 +16,10 @@ def get_timestamp():
 # Data to serve with the API
 TEMPERATUR = {
     "Optitop 1": {
-        "Temp": get_temperatur()
+        "Temp": max31865()
     },
     "Optitop 2": {
-        "Temp": get_temperatur()
+        "Temp": max31865()
     },
 }
 
