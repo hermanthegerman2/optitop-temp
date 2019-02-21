@@ -22,11 +22,11 @@ from flask import make_response, abort
 # Data to serve with the API
 TEMPERATUR = {
     "sensor1": {
-        "Optitop 1 Temp": max1.readTemp()
+        "sensor1": max1.readTemp()
 
     },
     "sensor2": {
-        "Optitop 2 Temp": max2.readTemp()
+        "sensor2": max2.readTemp()
     },
 }
 
