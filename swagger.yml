@@ -37,9 +37,9 @@ paths:
             type: array
             items:
               properties:
-                fname:
+                value:
                   type: string
-                lname:
+                name:
                   type: string
                 timestamp:
                   type: string
@@ -58,10 +58,10 @@ paths:
           schema:
             type: object
             properties:
-              fname:
+              value:
                 type: string
                 description: First name of sensor to create
-              lname:
+              name:
                 type: string
                 description: Last name of sensor to create
       responses:
@@ -86,9 +86,9 @@ paths:
           description: Successfully read person from people list operation
           schema:
             properties:
-              fname:
+              value:
                 type: string
-              lname:
+              name:
                 type: string
               timestamp:
                 type: string
@@ -110,9 +110,9 @@ paths:
           schema:
             type: object
             properties:
-              fname:
+              value:
                 type: string
-              lname:
+              name:
                 type: string
       responses:
         200:
