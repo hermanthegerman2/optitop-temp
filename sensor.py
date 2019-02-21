@@ -75,8 +75,8 @@ def create(temp):
     :param temp:  person to create in people structure
     :return:        201 on success, 406 on person exists
     """
-    name = temp.get("name", None)
-    value = temp.get("value", None)
+    name = sensor.get("name", None)
+    value = sensor.get("value", None)
 
     # Does the temp exist already?
     if name not in sensor and name is not None:
@@ -107,7 +107,7 @@ def update(name, temp):
         sensor[name]["value"] = temp.get("value")
         sensor[name]["timestamp"] = get_timestamp()
 
-        return sensor[lname]
+        return sensor[name]
 
     # otherwise, nope, that's an error
     else:
