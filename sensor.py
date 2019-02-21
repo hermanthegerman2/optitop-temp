@@ -57,7 +57,7 @@ def read_one(name):
     """
     # Does the person exist in people?
     if name in sensor:
-         = sensor.get(name)
+        temp = sensor.get(name)
 
     # otherwise, nope, not found
     else:
