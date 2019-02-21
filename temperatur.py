@@ -4,6 +4,8 @@ This is the TEMPERATUR module and supports all the ReST actions
 
 # System modules
 
+import max31865
+
 # GIPO 5
 max1 = max31865.max31865(5,9,10,11)
 # GIPO 6
