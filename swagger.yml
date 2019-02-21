@@ -39,7 +39,7 @@ paths:
 
   /TEMPERATUR/{Temp}:
     get:
-      operationId: people.read_one
+      operationId: temperatur.read_one
       tags:
         - People
       summary: Read one Temp from the TEMPERATUR list
