@@ -38,7 +38,7 @@ ns.model = (function() {
                 dataType: 'json',
                 data: JSON.stringify({
                     'value': value,
-                    'lname': lname
+                    'name': name
                 })
             };
             $.ajax(ajax_options)
@@ -49,7 +49,7 @@ ns.model = (function() {
                 $event_pump.trigger('model_error', [xhr, textStatus, errorThrown]);
             })
         },
-        update: function(fname, lname) {
+        update: function(value, name) {
             let ajax_options = {
                 type: 'PUT',
                 url: 'api/temp/' + name,
@@ -101,8 +101,8 @@ ns.view = (function() {
             $value.val('').focus();
         },
         update_editor: function(value, name) {
-            $name.val(lname);
-            $value.val(fname).focus();
+            $name.val(name);
+            $value.val(value).focus();
         },
         build_table: function(people) {
             let rows = ''
