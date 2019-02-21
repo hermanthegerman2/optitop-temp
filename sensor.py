@@ -91,7 +91,7 @@ def create(temp):
     else:
         abort(
             406,
-            "Peron with last name {name} already exists".format(lname=lname),
+            "Sensor with last name {name} already exists".format(name=name),
         )
 
 
@@ -112,7 +112,7 @@ def update(name, temp):
     # otherwise, nope, that's an error
     else:
         abort(
-            404, "Person with last name {name} not found".format(name=name)
+            404, "Sensor with name {name} not found".format(name=name)
         )
 
 
