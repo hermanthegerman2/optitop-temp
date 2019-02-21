@@ -17,7 +17,7 @@ ns.model = (function() {
         'read': function() {
             let ajax_options = {
                 type: 'GET',
-                url: 'api/temp',
+                url: 'api/sensor',
                 accepts: 'application/json',
                 dataType: 'json'
             };
@@ -32,7 +32,7 @@ ns.model = (function() {
         create: function(value, name) {
             let ajax_options = {
                 type: 'POST',
-                url: 'api/temp',
+                url: 'api/sensor',
                 accepts: 'application/json',
                 contentType: 'application/json',
                 dataType: 'json',
@@ -52,7 +52,7 @@ ns.model = (function() {
         update: function(value, name) {
             let ajax_options = {
                 type: 'PUT',
-                url: 'api/temp/' + name,
+                url: 'api/sensor/' + name,
                 accepts: 'application/json',
                 contentType: 'application/json',
                 dataType: 'json',
@@ -72,7 +72,7 @@ ns.model = (function() {
         'delete': function(name) {
             let ajax_options = {
                 type: 'DELETE',
-                url: 'api/temp/' + name,
+                url: 'api/sensor/' + name,
                 accepts: 'application/json',
                 contentType: 'plain/text'
             };
@@ -104,16 +104,16 @@ ns.view = (function() {
             $name.val(name);
             $value.val(value).focus();
         },
-        build_table: function(temp) {
+        build_table: function(sensor) {
             let rows = ''
 
             // clear the table
-            $('.temp table > tbody').empty();
+            $('.sensor table > tbody').empty();
 
             // did we get a people array?
             if (temp) {
-                for (let i=0, l=temp.length; i < l; i++) {
-                    rows += `<tr><td class="value">${temp[i].value}</td><td class="name">${temp[i].name}</td><td>${temp[i].timestamp}</td></tr>`;
+                for (let i=0, l=sensor.length; i < l; i++) {
+                    rows += `<tr><td class="value">${sensor[i].value}</td><td class="name">${sensor[i].name}</td><td>${sensor[i].timestamp}</td></tr>`;
                 }
                 $('table > tbody').append(rows);
             }
