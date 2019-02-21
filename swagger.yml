@@ -1,0 +1,59 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger Rest Article
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+# Paths supported by the server application
+paths:
+  /TEMPERATUR:
+    get:
+      operationId: temperatur.read_all
+      tags:
+        - Temp
+      summary: Read the entire list of Temp
+      description: Read the list of Temp
+      parameters:
+        - name: length
+          in: query
+          type: integer
+          description: Number of Temp to get from TEMPERATUR
+          required: false
+
+      responses:
+        200:
+          description: Successfully read TEMPERATUR list operation
+          schema:
+            type: array
+            items:
+              properties:
+                Temp:
+                  type: string
+
+
+  /TEMPERATUR/{Temp}:
+    get:
+      operationId: people.read_one
+      tags:
+        - People
+      summary: Read one Temp from the TEMPERATUR list
+      description: Read one Temp from the TEMPERATUR list
+      parameters:
+        - name: Temp
+          in: path
+          description: Last name of the Temp to get from the list
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully read Temp from TEMPERATUR list operation
+          schema:
+            properties:
+              Temp:
+                type: string
