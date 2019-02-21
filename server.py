@@ -1,5 +1,6 @@
-from flask import render_template
 import connexion
+from flask import render_template
+from connexion.resolver import RestyResolver
 
 # Create the application instance
 
