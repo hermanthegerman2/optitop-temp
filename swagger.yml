@@ -2,7 +2,7 @@ swagger: "2.0"
 info:
   description: This is the swagger file that goes with our server code
   version: "1.0.0"
-  title: Swagger Rest Article
+  title: Swagger ReST Article
 consumes:
   - application/json
 produces:
@@ -17,43 +17,118 @@ paths:
       operationId: sensor.read_all
       tags:
         - sensor
-      summary: Read the entire list of Temp
-      description: Read the list of Temp
+      summary: Read the entire list of sensor
+      description: Read the list of sensor
       parameters:
         - name: length
           in: query
           type: integer
-          description: Number of Temp to get from TEMPERATUR
+          description: Number of sensor to get from sensor
           required: false
-
+        - name: offset
+          in: query
+          type: integer
+          description: Offset from beginning of list where to start gathering sensor
+          required: false
       responses:
         200:
-          description: Successfully read TEMPERATUR list operation
+          description: Successfully read sensor list operation
           schema:
             type: array
             items:
               properties:
-                Temp:
+                fname:
+                  type: string
+                lname:
+                  type: string
+                timestamp:
                   type: string
 
+    post:
+      operationId: sensor.create
+      tags:
+        - sensor
+      summary: Create a sensor and add it to the sensor list
+      description: Create a new sensor in the sensor list
+      parameters:
+        - name: sensor
+          in: body
+          description: sensor to create
+          required: True
+          schema:
+            type: object
+            properties:
+              fname:
+                type: string
+                description: First name of sensor to create
+              lname:
+                type: string
+                description: Last name of sensor to create
+      responses:
+        201:
+          description: Successfully created sensor in list
 
-  /sensor/{Temp}:
+  /sensor/{name}:
     get:
       operationId: sensor.read_one
       tags:
-        - People
-      summary: Read one Temp from the TEMPERATUR list
-      description: Read one Temp from the TEMPERATUR list
+        - sensor
+      summary: Read one sensor from the sensor list
+      description: Read one sensor from the sensor list
       parameters:
-        - name: Temp
+        - name: name
           in: path
-          description: Last name of the Temp to get from the list
+          description: Last name of the person to get from the list
           type: string
           required: True
       responses:
         200:
-          description: Successfully read Temp from TEMPERATUR list operation
+          description: Successfully read person from people list operation
           schema:
             properties:
-              Temp:
+              fname:
                 type: string
+              lname:
+                type: string
+              timestamp:
+                type: string
+
+    put:
+      operationId: sensor.update
+      tags:
+        - sensor
+      summary: Update a sensor in the sensor list
+      description: Update a sensor in the sensor list
+      parameters:
+        - name: name
+          in: path
+          description: Last name of the sensor to update in the list
+          type: string
+          required: True
+        - name: sensor
+          in: body
+          schema:
+            type: object
+            properties:
+              fname:
+                type: string
+              lname:
+                type: string
+      responses:
+        200:
+          description: Successfully updated sensor in sensor list
+
+    delete:
+      operationId: sensor.delete
+      tags:
+        - sensor
+      summary: Delete a sensor from the people list
+      description: Delete a sensor
+      parameters:
+        - name: name
+          in: path
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully deleted a sensor from people list
