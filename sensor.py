@@ -25,13 +25,13 @@ def get_timestamp():
 sensor = {
     "1": {
         "value": max1.readTemp(),
-        "name": "1",
+        "name": "Optitop 1",
         #"fan": fan2.setTemp(),
         "timestamp": get_timestamp(),
     },
     "2": {
         "value": max2.readTemp(),
-        "name": "2",
+        "name": "Optitop 2",
         #"fan": fan2.setTemp(),
         "timestamp": get_timestamp(),
     },
