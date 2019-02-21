@@ -15,8 +15,8 @@ max2 = max31865.max31865(6,9,10,11)
 from flask import make_response, abort
 
 
-def get_timestamp():
-    return datetime.now().strftime(("%Y-%m-%d %H:%M:%S"))
+#def get_timestamp():
+#    return datetime.now().strftime(("%Y-%m-%d %H:%M:%S"))
 
 
 # Data to serve with the API
