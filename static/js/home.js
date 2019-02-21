@@ -104,7 +104,7 @@ ns.view = (function() {
             $name.val(name);
             $value.val(value).focus();
         },
-        build_table: function(people) {
+        build_table: function(temp) {
             let rows = ''
 
             // clear the table
@@ -113,7 +113,7 @@ ns.view = (function() {
             // did we get a people array?
             if (temp) {
                 for (let i=0, l=temp.length; i < l; i++) {
-                    rows += `<tr><td class="value">${people[i].value}</td><td class="name">${people[i].name}</td><td>${sensor[i].timestamp}</td></tr>`;
+                    rows += `<tr><td class="value">${temp[i].value}</td><td class="name">${temp[i].name}</td><td>${temp[i].timestamp}</td></tr>`;
                 }
                 $('table > tbody').append(rows);
             }
@@ -209,7 +209,7 @@ ns.controller = (function(m, v) {
             .find('td.name')
             .text();
 
-        view.update_editor(fname, lname);
+        view.update_editor(value, name);
     });
 
     // Handle the model events
