@@ -17,7 +17,7 @@ ns.model = (function() {
         'read': function() {
             let ajax_options = {
                 type: 'GET',
-                url: 'api/sensor',
+                url: 'api/temp',
                 accepts: 'application/json',
                 dataType: 'json'
             };

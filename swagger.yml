@@ -12,11 +12,11 @@ basePath: /api
 
 # Paths supported by the server application
 paths:
-  /TEMPERATUR:
+  /sensor:
     get:
-      operationId: temperatur.read_all
+      operationId: sensor.read_all
       tags:
-        - Temp
+        - sensor
       summary: Read the entire list of Temp
       description: Read the list of Temp
       parameters:
@@ -37,9 +37,9 @@ paths:
                   type: string
 
 
-  /TEMPERATUR/{Temp}:
+  /sensor/{Temp}:
     get:
-      operationId: temperatur.read_one
+      operationId: sensor.read_one
       tags:
         - People
       summary: Read one Temp from the TEMPERATUR list
