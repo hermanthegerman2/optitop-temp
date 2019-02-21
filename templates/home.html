@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Application Optitop-Temp Home Page</title>
+    <title>Application Home Page</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
     <link rel="stylesheet" href="static/css/home.css">
     <script
@@ -13,14 +13,14 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="banner">Temperatur Application</h1>
+        <h1 class="banner">Temperatur Sensor Application</h1>
         <div class="section editor">
-            <label for="fname">Name
-                <input id="fname" type="text" />
+            <label for="value">Value
+                <input id="value" type="text" />
             </label>
             <br />
-            <label for="Temp">Last Name
-                <input id="Temp" type="text" />
+            <label for="name">Name
+                <input id="name" type="text" />
             </label>
             <br />
             <button id="create">Create</button>
@@ -28,13 +28,13 @@
             <button id="delete">Delete</button>
             <button id="reset">Reset</button>
         </div>
-        <div class="temperatur">
+        <div class="sensor">
             <table>
-                <caption>Temperatur</caption>
+                <caption>Sensor</caption>
                 <thead>
                     <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>Value</th>
+                        <th>Name</th>
                         <th>Update Time</th>
                     </tr>
                 </thead>
