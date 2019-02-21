@@ -10,7 +10,7 @@ from connexion.resolver import RestyResolver
 if __name__ == '__main__':
     app = connexion.App(__name__, 5000, specification_dir='./')
     app.add_api('swagger.yml', resolver=RestyResolver('api'))
-    app.run()
+    app.run(host='0.0.0.0', debug=True)
 
 # Create a URL route in our application for "/"
 @app.route('/')
