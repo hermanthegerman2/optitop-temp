@@ -3,7 +3,11 @@ This is the TEMPERATUR module and supports all the ReST actions
 """
 
 # System modules
-from datetime import datetime
+
+# GIPO 5
+max1 = max31865.max31865(5,9,10,11)
+# GIPO 6
+max2 = max31865.max31865(6,9,10,11)
 
 # 3rd party modules
 from flask import make_response, abort
@@ -16,10 +20,11 @@ def get_timestamp():
 # Data to serve with the API
 TEMPERATUR = {
     "Optitop 1": {
-        "Temp": max31865()
+        "Temp": max1.readTemp()
+
     },
     "Optitop 2": {
-        "Temp": max31865()
+        "Temp": max2.readTemp()
     },
 }
 
