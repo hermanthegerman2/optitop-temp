@@ -83,7 +83,7 @@ paths:
           required: True
       responses:
         200:
-          description: Successfully read person from people list operation
+          description: Successfully read value from sensor list
           schema:
             properties:
               value:
